@@ -36,6 +36,8 @@ export const signup = async (req, res) => {
 
     generateTokenAndSetCookie(res, user._id);
 
+    sendVerificationEmail(user.email, verificationToken);
+
     res.status(201).json({
       success: true,
       message: "User registered successfully",
