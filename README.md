@@ -1,1 +1,1 @@
-# mern-auth
+# MERN STACK AUTH
