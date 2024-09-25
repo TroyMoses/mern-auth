@@ -9,7 +9,7 @@ export const sendVerificationEmail = async (email, verificationToken) => {
 	const recipient = [{ email }];
 
 	try {
-		const response = await mailtrapClient.send({
+		const response = await mailtrapClient.testing.send({
 			from: sender,
 			to: recipient,
 			subject: "Verify your email",
