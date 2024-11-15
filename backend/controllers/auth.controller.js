@@ -84,7 +84,9 @@ export const verifyEmail = async (req, res) => {
         message: "Email verified successfully",
         user: { ...user._doc, password: undefined },
       });
-  } catch (error) {}
+  } catch (error) {
+    return res.status(500).json({ success: false, message: error.message });
+  }
 };
 
 export const login = async (req, res) => {
@@ -92,5 +94,6 @@ export const login = async (req, res) => {
 };
 
 export const logout = async (req, res) => {
-  res.send("logout route");
+  res.clearCookie("token");
+  res.status(200).json({ success: true, message: "Logged out successfully" });
 };
