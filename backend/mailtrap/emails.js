@@ -50,7 +50,7 @@ export const sendPasswordResetEmail = async (email, resetURL) => {
 	const recipient = [{ email }];
 
 	try {
-		const response = await mailtrapClient.send({
+		const response = await mailtrapClient.testing.send({
 			from: sender,
 			to: recipient,
 			subject: "Reset your password",
